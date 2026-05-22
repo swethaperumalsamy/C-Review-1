@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+
+struct Product
+{
+    float price;
+    float discount;
+};
+
+
+float calculateDiscount(struct Product p)
+{
+    float finalPrice;
+
+    finalPrice = p.price - (p.price * p.discount / 100);
+
+    return finalPrice;
+}
+
+
+void updatePrice(struct Product *p)
+{
+    p->price = p->price - (p->price * p->discount / 100);
+}
+
+int main()
+{
+    struct Product p1;
+
+    p1.price = 1000;
+    p1.discount = 20;
+
+    printf("Original Price = %.2f\n", p1.price);
+
+    printf("Discounted Price (Call by Value) = %.2f\n",
+           calculateDiscount(p1));
+
+    updatePrice(&p1);
+
+    printf("Updated Original Price (Call by Address) = %.2f\n",
+           p1.price);
+
+    return 0;
+}
