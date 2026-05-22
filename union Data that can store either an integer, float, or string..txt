@@ -1,19 +1,27 @@
 #include <stdio.h>
+#include <string.h>
 
-union Data {
+union Data
+{
     int i;
     float f;
     char str[20];
 };
 
-int main() {
+int main()
+{
     union Data d;
 
-    d.i = 10;
-    printf("Integer = %d\n", d.i);
+    d.i = 100;
+    printf("Integer: %d\n", d.i);
 
-    d.f = 3.14;
-    printf("Float = %.2f\n", d.f);
+    d.f = 5.5;
+    printf("Float: %.1f\n", d.f);
+
+    strcpy(d.str, "Hello");
+    printf("String: %s\n", d.str);
+
+    printf("Size of union: %lu bytes\n", sizeof(d));
 
     return 0;
 }
