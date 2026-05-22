@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+enum Status
+{
+    PENDING,
+    SHIPPED,
+    DELIVERED
+};
+
+int main()
+{
+    enum Status order;
+
+    order = SHIPPED;
+
+    if(order == PENDING)
+    {
+        printf("Order Pending");
+    }
+    else if(order == SHIPPED)
+    {
+        printf("Order Shipped");
+    }
+    else if(order == DELIVERED)
+    {
+        printf("Order Delivered");
+    }
+
+    return 0;
+}
