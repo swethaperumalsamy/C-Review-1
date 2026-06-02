@@ -1,0 +1,44 @@
+#include<stdio.h>
+int armstrong(int n)
+{
+    int temp=n,sum=0,digit;
+    while(temp!=0)
+    {
+        digit=temp%10;
+        sum=sum+digit*digit*digit;
+        temp=temp/10;
+    }
+    if (sum==n)
+    return 1;
+    else
+    return 0;
+}
+int perfect(int n)
+{
+    int sum=0;
+    for(int i=1;i<n;i++)
+    {
+        if(n%i==0)
+        {
+            sum=sum+i;
+        }
+    }
+    if(sum==n)
+    return 1;
+    else
+    return 0;
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    if(armstrong(n))
+    printf("Armstrong number");
+    else
+    printf("Not an Armstrong number");
+    if(perfect(n))
+    printf("\nPerfect number");
+    else
+    printf("\nNot a perfect number");
+    return 0;
+}
