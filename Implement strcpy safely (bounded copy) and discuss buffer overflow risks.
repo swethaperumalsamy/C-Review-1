@@ -1,0 +1,18 @@
+#include<stdio.h>
+void stringcopy(char src[],char dest[],int size)
+{
+    int i;
+    for(i=0;i<size-1&&src[i]!='\0';i++)
+    {
+        dest[i]=src[i];
+    }
+    dest[i]='\0';
+}
+int main()
+{
+    char src[100];
+    char dest[50];
+    fgets(src,sizeof(src),stdin);
+    stringcopy(src,dest,sizeof(dest));
+    printf("%s",dest);
+}
