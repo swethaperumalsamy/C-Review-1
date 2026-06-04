@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    scanf("%d %d",&a,&b);
+    int arr[a],ar[b];
+    for(int i=0;i<a;i++)
+    scanf("%d",&arr[i]);
+    for(int i=0;i<b;i++)
+    scanf("%d",&ar[i]);
+    int i=0,j=0;
+    while(i<a&&j<b)
+    {
+        if(arr[i]<ar[j])
+        {
+            printf("%d ",arr[i]);
+        i++;}
+        else
+        {
+            printf("%d ",ar[j]);
+            j++;
+        }
+        
+    }
+    while(i<a){
+    printf("%d ",arr[i]);
+    i++;}
+    while(j<b)
+    {
+        printf("%d ",ar[j]);
+        j++;
+    }
+}
